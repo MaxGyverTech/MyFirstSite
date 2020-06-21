@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Курсы{% endblock %}
+{% block body %}
+    {% for curse in curses %}
+        <div class="shopElDiv">
+            <img src="{{ curse.curse_img.url }}" alt="">
+            <h2>{{ curse.curse_name }}</h2>
+            <p>{{ curse.curse_descr }}</p>
+            <p>{{ curse.curse_cost }}p.</p>
+            <button class="submitBtn float-left"><a href="{% url 'landing ' curse.curse_id%}">Подробнее</a></button>
+            <button class="inactiveBtn float-right"><a href="{% url 'shop_buy' curse.curse_id%}">Купить</a></button>
+        </div>
+    {% endfor %}
+
+{% endblock %}

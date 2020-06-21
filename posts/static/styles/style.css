@@ -1,0 +1,240 @@
+a {
+    color: rgba(255,77,0,0.81);
+    text-decoration: none;
+}
+label,h1,h2,h3,h4,p a,div{
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+.menu-main {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: rgba(255,255,255,.5);
+  box-shadow: 3px 0 7px rgba(0,0,0,.3);
+    height: 60px;
+}
+.menu-main li {
+    display: inline-block;
+  position: relative;
+  line-height: 61px;
+  padding-left: 10px;
+    padding-right: 10px;
+    transition:.3s linear;
+
+}
+.menu-main a {
+    color: black;
+    font-family: Roboto;
+    text-decoration: none;
+    font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
+
+}
+.menu-main .Rmenu:hover{background-color: rgba(143, 143, 143, 0.36);}
+#logotext {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Segoe UI";
+}
+.Lmenu{  float: right;}
+.Rmenu{  float: left;}
+.logBtn{
+    padding: 7px;
+    border: 0px solid blue;
+    background-color: blue;
+    border-radius: 4px;
+    color: white;
+}
+.singBtn{
+    padding: 7px;
+    border: 2px solid blue;
+    color: white;
+    border-radius: 3px;
+}
+
+.divContent {
+    margin-top: 0px;
+}
+.textCl {
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+.erorText {
+    background-color: rgba(255,7,0,0.72);
+    border-radius: 4px;
+    padding: 5px;
+    width: max-content;
+    alignment: center;
+    align-self: center;
+}
+.submitBtn{
+    background-color: #0085ff;
+    border-radius: 25px;
+    border: black solid 0px;
+    width: max-content;
+    height: min-content;
+    font-family: Roboto;
+    font-size: 20px;
+    padding: 4px;
+    transition: 0.1s;
+    padding-left: 6px;
+    padding-right: 6px;
+
+}
+
+.textfield{
+    background-color: #a8d3ff;
+    border-radius: 5px;
+    border: black solid 0px;
+    width: 10em;
+    font-family: Roboto;
+    font-size: 20px;
+    padding: 2px;
+    transition: 0.05s;
+    margin-left: 20px;
+}
+.largefield{height: 4em;width: 30em;resize: none}
+.submitBtn:hover{border: 2px solid rgba(112,150,173,0.8); margin: -2px;}
+.formLabel {
+    font-family: Roboto;
+    margin-left: 20px;
+}
+
+/*Пост*/
+.postBorder {
+    background-color: rgba(112,150,173,0.5);
+    margin: 15px;
+    border: 0px solid rgba(112,150,173,0.8);
+    padding: 20px;
+    padding-top: 1px;
+    border-radius: 15px;
+    width: 30%;
+    height: min-content;
+    transition: 0.1s;
+}
+.postBorder:hover {
+    border: 3px solid rgba(112,150,173,0.8);
+    margin-bottom: -3px;
+    margin-left: -2px;
+}
+.postTitle {
+    font-family: Arial;
+    font-size: 23px;
+    margin-bottom: 2px;
+}
+.postText {
+    font-family: "Comic Sans MS";
+    color: #4b4b4b;
+    font-style: italic;
+}
+.postPubDate {
+    font-family: "Ink Free";
+    color: #4b4b4b;
+}
+
+/* Логин */
+
+.loginDiv {
+    margin-top: 10%;
+    background-color: #adb4ae;
+    border-radius: 20px;
+    padding: 20px;
+    width: max-content;
+}
+#id_username, #id_password, #id_email, #id_new_password1, #id_new_password2 {
+    background-color: #a8d3ff;
+    border-radius: 5px;
+    border: black solid 0px;
+    width: 10em;
+    font-family: Roboto;
+    font-size: 20px;
+    padding: 2px;
+    transition: 0.05s;
+    margin-bottom: 8px;
+    alignment: center;
+}
+#id_email {
+    width: 15em;
+}
+.vertlink {
+    margin: 5px;
+}
+
+/* Shop */
+.shopElDiv {
+    padding: 20px;
+    width: 600px;
+    background-color: #adb4ae;
+    box-shadow: 0px 0px 10px black;
+    margin: 15px;
+}
+.lessonPrevDiv {
+    margin: 10px;
+    padding: 10px;
+    width: 600px;
+    background-color: #adb4ae;
+    box-shadow: 0px 0px 10px black;
+}
+
+.inactiveBtn {
+    background-color: rgba(131,195,255,0);
+    border-radius: 25px;
+    border: black solid 1px;
+    width: max-content;
+    height: min-content;
+    font-size: 20px;
+    padding: 4px;
+    transition: 0.1s;
+    padding-left: 6px;
+    padding-right: 6px;
+    float: right;
+}
+
+.commentDiv {
+    margin-left: 500px;
+}
+.commentBtn {
+    background-color: #0085ff;
+    border-radius: 5px;
+    border: black solid 0px;
+    width: max-content;
+    height: min-content;
+    font-family: Roboto;
+    font-size: 20px;
+    padding: 4px;
+    transition: 0.1s;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 20px;
+    color: white;
+    margin-top: 5px;
+}
+.hmaxcont {height: max-content;}
+.downloadlink{margin: 15px}
+.replydiv {
+    background-color: #83c3ff;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    width: 600px;
+}
+.replydiv p{margin: 0px;}
+.replydiv h2{
+    margin-top: 2px;
+    margin-bottom: 3px;
+}
+.currentcommentdiv {background-color: #a8d3ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    width: 650px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.replyfield {width: 29em;height: 3em;}
+

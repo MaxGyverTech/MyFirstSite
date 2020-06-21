@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Вы вышли из аккаунта{% endblock %}
+
+{% block body %}
+<div align="center">
+<div class="loginDiv" align="center">
+<p class="textCl">Вы вышли!</p>
+</div>
+
+<button class="submitBtn"><a href="{% url 'login'%}">Жмяк сюда если хотите войти заного</a></button>
+</div>
+{% endblock %}

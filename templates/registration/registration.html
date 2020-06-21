@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Регистрация{% endblock %}
+{% block body %}
+<div align="center" class="prelogindiv">
+    <div class="loginDiv" align="center">
+         <form method="post" action="{% url 'saveuser' %}">
+             {% csrf_token %}
+             <label>Имя пользователя</label><br>
+             <input class="textfield" required type="text" name="username"><br>
+             <label>Email</label><br>
+             <input class="textfield" required type="text" name="email"><br>
+             <label>Пароль</label><br>
+             {% if err == 1 %}
+                 <p class="textCl erorText">Пароль должен состоять минимум из 8 знаков</p>
+             {% endif %}
+             <input class="textfield" required type="text" name="password"><br>
+             <input type="submit" value="Войти" class="submitBtn"/>
+            <p class="textCl">Уже есть аккаунт?<a href="{% url 'login' %}">Войти</a></p>
+         </form>
+    </div>
+</div>
+{% endblock %}

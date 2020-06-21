@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block body %}
+    <h2>{{ curse.curse_name }}</h2>
+    <img src="{{ curse.curse_img.url }}" alt="">
+    <p>{{ curse.curse_descr }}</p>
+    <img src="{{ landing.image.url }}" alt="">
+    <p>{{ landing.maindescription }}</p>
+    {% for ask in asks %}
+        <div class="askans">
+            <div class="ask">{{ ask.ask }}</div>
+            <div class="ans">{{ ask.answer }}</div>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}
+
+

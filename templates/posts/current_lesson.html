@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ lesson.les_title }}{% endblock %}
+{% block body %}
+    <div align="center" class="hmaxcont">
+    <h2>{{ lesson.les_title }}</h2>
+    <p>{{ lesson.les_descr }}</p>
+    <iframe width="1244" height="700" src="https://www.youtube.com/embed/{{ lesson.les_youtubelink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="downloadlink"><a href="{{ lesson.les_googlelink }}">Скачать материалы к уроку</a></div>
+    </div>
+    <div class="commentDiv">
+    <form action="{% url 'new_comm' curse.curse_id lesson.les_id %}" method="POST">
+        {% csrf_token %}
+         <label class="formLabel" for="com_text">Введите коментарий</label><br>
+          <textarea class="textfield largefield" required type="text" name="com_txt"></textarea><br>
+          <input type="submit" name="send" value="Прокоментировать" class="commentBtn">
+    </form>
+    {% if comments %}
+        {% for comment in comments %}
+        <div class="currentcommentdiv">
+        <h2>{{ comment.commenter.username }}</h2>
+        <p>{{ comment.com_text }}</p>
+        <p class="postPubDate">{{ comment.datetime }}</p>
+        {% for reply in replys %}
+            {% if reply.pr_comment == comment %}
+                <div class="replydiv">
+                <h2>{{ reply.commenter.username }}</h2>
+                <p>{{ reply.com_text }}</p>
+                <p class="postPubDate">{{ reply.datetime }}</p>
+
+            </div>
+            {% endif %}
+        {% endfor %}
+        <div class="replydiv">
+            <button class="replyBtn commentBtn"><p>Ответить на комментарий</p></button>
+            <div class="replyform">
+                <form action="{% url "new_reply" curse.curse_id lesson.les_id comment.comment_id %}" method="POST">
+                {% csrf_token %}
+                    <label class="formLabel" for="reply_text">Введите ответ на комментарий</label><br>
+                    <textarea class="textfield largefield replyfield" required type="text" name="reply_txt"></textarea><br>
+                    <input type="submit" name="send" value="Прокоментировать" class="commentBtn">
+                    </form>
+            </div>
+<script>
+    /*
+$formhtml = $('<form action="{% url "new_reply" curse.curse_id lesson.les_id comment.comment_id %}" method="POST">\n' +
+        '{% csrf_token %}'
++    '                <label class="formLabel" for="reply_text">Введите ответ на комментарий</label><br>\n' +
+    '                <textarea class="textfield largefield replyfield" required type="text" name="reply_txt"></textarea><br>\n' +
+    '                <input type="submit" name="send" value="Прокоментировать" class="commentBtn">\n' +
+    '            </form>');
+*/
+
+
+</script>
+        </div>
+        </div>
+
+    {% endfor %}
+    {% else %}
+        <p>Здесь пока что нет коментариев.Будть первым!</p>
+    {% endif %}
+
+    </div>
+    <script src="{% static 'scripts/script.js' %}"></script>
+{% endblock %}

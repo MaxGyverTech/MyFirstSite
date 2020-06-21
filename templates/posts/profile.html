@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Мои курсы{% endblock %}
+{% block body %}
+    {% if my_curses %}
+        <h3>Мои курсы:</h3>
+        {% for curse in my_curses %}
+            <div class="shopElDiv">
+                <img src="{{ curse.curse_img }}" alt="">
+                <h2>{{ curse.curse_name }}</h2>
+                <p>{{ curse.curse_descr }}</p>
+                <button class="submitBtn"><a href="{% url 'current_curse' curse.curse_id%}">Перейти к урокам</a></button>
+            </div>
+
+        {% endfor %}
+    {% else %}
+        <h2>У вас пока что нет курсов</h2>
+    {% endif %}
+{% endblock %}

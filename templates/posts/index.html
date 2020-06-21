@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Последние посты{% endblock %}
+{% block body %}
+
+    <a href="{%  url 'test' %}"></a>
+    <form action="send/" method="POST">
+          {% csrf_token %}
+          <label class="formLabel" for="post_name">Name for new post</label><br>
+          <input class="textfield" required type="text" name="post_name"><br>
+          <label class="formLabel" for="post_text">Text for new post</label><br>
+          <textarea class="textfield largefield" required name="post_text"></textarea><br>
+          <input type="submit" name="send" value="Post!" class="submitBtn">
+      </form>
+      {% if posts %}
+          {% for post in posts %}
+              <div class="postBorder">
+                  <p class="postTitle">{{ post.post_name }}</p>
+                  <div class="postText">{{ post.post_text }}</div><br>
+                  <div class="postPubDate">Was published: {{ post.post_pubdate }}</div>
+              </div>
+          {% endfor %}
+      {% else %}
+          <h4 class="noPost">Статьи не найдены</h4>
+      {% endif %}
+
+
+
+{% endblock %}

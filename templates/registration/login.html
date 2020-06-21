@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Войти{% endblock %}
+
+{% block body %}
+<div align="center">
+
+<div class="loginDiv" align="center">
+{% if form.errors %}
+  <p class="textCl erorText">Имя пользователя или пароль неверны! Попробуйте ещё раз</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p class="textCl">У вас нет доступа к данной странице</p>
+  {% else %}
+    <p  class="textCl">Войдите чтобы посмотреть страницу</p>
+  {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+    <div class="textCl">{{ form.username.label_tag }}</div>
+    <div><input type="text" name="username" value="testuser" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"></div>
+    <div class="textCl">{{ form.password.label_tag }}</div>
+    <div>{{ form.password }}</div>
+
+
+<input type="submit" value="Войти" class="submitBtn"/>
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p class="textCl"><a id="forgotLink" href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+<p class="textCl">Нет аккаунта?<a href="{% url 'singup' %}">Зарегистрироватся</a></p>
+</div>
+
+</div>
+{% endblock %}

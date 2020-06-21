@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ curse.curse_name }}{% endblock %}
+{% block body %}
+    <h2>{{ curse.curse_name }}</h2>
+    {% for lesson in lessons %}
+        <div class="lessonPrevDiv">
+            <a href="{% url 'current_lesson' curse.curse_id lesson.les_id%}">{{ lesson.les_title }}</a>
+        </div>
+    {% endfor %}
+{% endblock %}
